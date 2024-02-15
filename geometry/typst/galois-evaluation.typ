@@ -56,10 +56,15 @@
   let ell_cusp_y = -2
 
   draw.content((ell_cusp_x, ell_cusp_y), $plus.minus$)
+
   
-  draw.line((0, -0.5), (0.55, -0.35), mark: (end: ">"), stroke: (thickness: 2pt))
 
+  draw.arc((1, -1), start: 0deg, stop: 90deg, radius: 0.5, stroke: (thickness: 2pt))
 
+  let y = 1.4
+  draw.line((1, 0.5 - y), (1, 0.3 - y), mark: (end: ">"), stroke: (thickness: 2pt))
+
+  
   draw.content((- ell_cusp_x, ell_cusp_y), $plus.minus$)
 
   // content((0, -1.5), $"the combinatorial structure of a" cal(D)\-Theta^(plus.minus ell)\-"Hodge theater"$)
