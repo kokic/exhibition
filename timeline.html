@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kokic's Timeline</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    img {
+      margin: 4px;
+      border-radius: 4px;
+    }
+
+    i {
+      font-style: italic;
+      font-size: 0.9em;
+      color: #bbb;
+    }
+
+    code {
+      font-family: "Jetbrains Mono", monospace;
+      background-color: #eee;
+      padding: 0 0.2em;
+      border-radius: 0.2em;
+    }
+
+    summary {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>What did I do</h2>
+
+  <ul>
+
+    <li>
+      March 09, 2024 - March 27, 2024. Achieve all the achievements of ICEY.
+      <i>(Steam, 艾希)</i>
+    </li>
+
+    <li>
+      March 01, 2024. Achieve all the achievements of Tsukikage (i.e., 月影のシミュラクル -解放の羽-).
+      <i>(Steam, Tsukikage)</i>
+    </li>
+
+    <li>
+      February 07, 2024 ~ May 14, 2024. Achieve all the achievements of Steins;Gate (pron. Shutainzu Gēto).
+      <i>(Steam, 5pb, Steins;Gate)</i>
+    </li>
+
+    <li>
+      December 23, 2023 ~ December 30, 2023. Achieve all the achievements of Witch Spring R.
+      <i>(Steam, Witch Spring)</i>
+    </li>
+
+    <li>
+      May 27, 2023. A simple minecraft was implemented using Ursina,
+      which includes many personally created blocks and entity models.
+      <i>(Python, Minecraft, Blender)</i>
+      <details>
+        <summary>a GIF that was preserved at that time</summary>
+        <img src="./timeline/jugendtraum.gif" />
+      </details>
+    </li>
+
+    <li>
+      August 16, 2022. Translated the Brian Harvey's
+      <a href="https://people.eecs.berkeley.edu/~bh/proglang.html">
+        Scheme vs. Python
+      </a>.
+      <i>(Computer Science, Translation). </i>
+    </li>
+
+    <li>
+      January 01, 2022. Translated the paper
+      <a href="http://www.jstor.org/stable/2322314">
+        A New Proof of Erdős's Theorem on Monotone Multiplicative Functions
+      </a>.
+      <i>(Math, Translation). </i>
+    </li>
+
+    <li>
+      January 01, 2022. By studying the Fermat point problem,
+      obtained an identity about trigonometric functions.
+      <i>(Math, Analysis). </i>
+    </li>
+
+    <li>
+      October 17, 2021. Created an animation about the
+      combinatorial structure of a D-Θ±ell-Hodge theater
+      using CSS and KaTeX.
+      <i>(CSS, TeX)</i>
+      <ul>
+        <li>
+          Note: This comes from Shinichi Mochizuki's
+          <a href="https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20I.pdf">Inter-universal
+            Teichmüller Theory
+          </a>
+        </li>
+      </ul>
+      <details>
+        <summary>a GIF that was preserved at that time</summary>
+        <img width="500px" src="./timeline/hodge.gif" />
+      </details>
+    </li>
+
+    <li>
+      August 17, 2021. Obtained and proved an analytical inverse formula
+      for a class of generalized periodic continued fractions.
+      <i>(Math, Analysis). </i>
+    </li>
+
+    <li>
+      October 02, 2020. Translated a part of the paper
+      <a
+        href="https://www.kurims.kyoto-u.ac.jp/~motizuki/Alien%20Copies,%20Gaussians,%20and%20Inter-universal%20Teichmuller%20Theory.pdf">
+        The Mathematics of Mutually Alien Copies: from Gaussian Integrals to Inter-universal Teichmuller Theory
+      </a>.
+      <i>(Math, Translation). </i>
+    </li>
+
+    <li>
+      June, 2020. Rediscovered the Aczél-Popoviciu inequality,
+      And provided two new proof of Cauchy / Aczél inequality.
+      <i>(Math, Elementary Mathematics). </i>
+    </li>
+
+    <li>
+      April, 2019. Rediscovered the Lagrange interpolation formula.
+      <i>(Math, Linear Algebra). </i>
+    </li>
+
+    <li>
+      August 2018. Discovered the principle of Zhuowei Zhang's BlockLauncher (e.g., Native Addons & ModePE).
+      <i>(MinecraftPE, BlockLauncher, C/C++, Java, JavaScript). </i>
+    </li>
+
+    <li>
+      August 2018. Implemented the <a href="https://mcmobs.fandom.com/wiki/Mutant_Zombie">Mutated Zombie</a>
+      model using only ModPE.
+      <i>(MinecraftPE, BlockLauncher, JavaScript). </i>
+
+      <details>
+        <summary>an image that was preserved at that time</summary>
+        <img src="./timeline/mutant-zombie.jpg" />
+      </details>
+    </li>
+
+    <li>
+      Provides additional Native Functions and Hook Event support for ModPE through FFI. <br>
+      Call chain: C++ ⇆ Java → JavaScript ⇆ Java ⇆ C++ → ⋯
+      <ul>
+        <li>The first arrow comes from the callback of the BlockLauncher through the naive JNI.</li>
+        <li>The second arrow comes from the Rhino used by the BlockLauncher,
+          a JVM's JavaScript interpreter.
+        </li>
+        <li>The third arrow comes from Rhino calling the <code>java.lang.ClassLoader</code>
+          through JVM reflection. <br>
+          The reverse arrow comes from the so-called interface dynamic proxy
+          <code>Proxy.newProxyInstance</code>.
+        </li>
+        <li>The fourth arrow comes from the <code>System.load</code> of the JVM and JNI.</li>
+      </ul>
+      <i>(MinecraftPE, BlockLauncher, C++, Java, JavaScript). </i>
+    </li>
+
+    <li>
+      August 2017. Implemented the
+      <a href="https://minecraft.fandom.com/wiki/End_Crystal" target="_parent">End Crystal</a>
+      that was closest to PC behavior <br>
+      (e.g., Model, Rotation & Explosion etc.) at the time using only ModPE.
+      <i>(MinecraftPE, BlockLauncher, JavaScript). </i>
+      <ul>
+        <li>
+          Note: At that time, I recorded a video and posted it on Twitter.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      July 2017. Discovered the principle of Zheka Smirnov's IC2
+      (i.e, Industrial Craft 2) Mod windmill fan blade model.
+      <i>(MinecraftPE, BlockLauncher, JavaScript). </i>
+    </li>
+
+    <li>
+      June 2016. Implemented a large number of 3D Blocks Mod models for <a href="https://x.com/Elvincth">@Elvincth</a>.
+      <i>(MinecraftPE, BlockLauncher, JavaScript). </i>
+    </li>
+
+    <li>
+      Everyday 2011 ~ 2013. Fighting against shrubs or weeds in the countryside (Don Quixote vs. Windmill). <br>
+      Use a common set of plastic building block toys for Role-playing.
+    </li>
+
+    <li>
+      Everyday 2003 ~ now. Breathing.
+    </li>
+
+    <li>
+      February 02, 2003. Born.
+    </li>
+  </ul>
+
+</body>
+
+</html>
