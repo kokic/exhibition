@@ -32,14 +32,29 @@
     summary {
       text-decoration: underline;
     }
+
+    summary::marker {
+      content: "↓ ";
+    }
   </style>
 </head>
 
 <body>
 
-  <h2>What did I do</h2>
+  <h2>Fun things I did</h2>
 
   <ul>
+
+    <li>
+      June 14, 2024. Created
+      <a href="https://kokic.github.io/exhibit/timeline/">the current</a>
+      page.
+    </li>
+
+    <li>
+      April 15, 2024. Present a lower-complexity higher-order symbolic differentiation method.
+      <i>(Computer Science, Automatic Differentiation)</i>
+    </li>
 
     <li>
       March 09, 2024 - March 27, 2024. Achieve all the achievements of ICEY.
@@ -59,6 +74,15 @@
     <li>
       December 23, 2023 ~ December 30, 2023. Achieve all the achievements of Witch Spring R.
       <i>(Steam, Witch Spring)</i>
+      <ul>
+        <li>Note: About 4 years ago, completed Witch Spring I, II, and III on mobile phone. </li>
+      </ul>
+    </li>
+
+    <li>
+      July 01, 2023. Implemented a transpiler
+      <a href="https://kokic.github.io/UniTeX-Website/">UniTeX</a>
+      that converts TeX into Unicode.
     </li>
 
     <li>
@@ -66,9 +90,24 @@
       which includes many personally created blocks and entity models.
       <i>(Python, Minecraft, Blender)</i>
       <details>
-        <summary>a GIF that was preserved at that time</summary>
+        <summary>A GIF that was preserved at that time</summary>
         <img src="./jugendtraum.gif" />
       </details>
+    </li>
+
+    <li>
+      March 31, 2023.
+      By modifying the source code of Stable Diffusion,
+      it does not splice the product into a grid map in batch generation mode
+      <i>(Stable Diffusion)</i>
+    </li>
+
+    <li>
+      October 10, 2022. With proper definitions,
+      the lyrics of "canta per me" become legal
+      <a href="https://github.com/kokic/potos-flavus/blob/main/canta-per-me.kt">Kotlin source code</a>
+      (can be compiled and executed).
+      <i>(Kotlin, Canta per me)</i>
     </li>
 
     <li>
@@ -107,7 +146,7 @@
         </li>
       </ul>
       <details>
-        <summary>a GIF that was preserved at that time</summary>
+        <summary>A GIF that was preserved at that time</summary>
         <img width="500px" src="./hodge.gif" />
       </details>
     </li>
@@ -119,10 +158,15 @@
     </li>
 
     <li>
+      July 15, 2021. Implemented a JavaScript Parser in C++.
+      <i>(Parser, C++). </i>
+    </li>
+
+    <li>
       October 02, 2020. Translated a part of the paper
       <a
         href="https://www.kurims.kyoto-u.ac.jp/~motizuki/Alien%20Copies,%20Gaussians,%20and%20Inter-universal%20Teichmuller%20Theory.pdf">
-        The Mathematics of Mutually Alien Copies: from Gaussian Integrals to Inter-universal Teichmuller Theory
+        The Mathematics of Mutually Alien Copies: from Gaussian Integrals to Inter-universal Teichmüller Theory
       </a>.
       <i>(Math, Translation). </i>
     </li>
@@ -131,6 +175,11 @@
       June, 2020. Rediscovered the Aczél-Popoviciu inequality,
       And provided two new proof of Cauchy / Aczél inequality.
       <i>(Math, Elementary Mathematics). </i>
+    </li>
+
+    <li>
+      April, 2020. Rediscovered the Rayleigh quotient.
+      <i>(Math, Linear Algebra). </i>
     </li>
 
     <li>
@@ -149,27 +198,59 @@
       <i>(MinecraftPE, BlockLauncher, JavaScript). </i>
 
       <details>
-        <summary>an image that was preserved at that time</summary>
+        <summary>An image that was preserved at that time</summary>
         <img src="./mutant-zombie.jpg" />
       </details>
     </li>
 
     <li>
-      Provides additional Native Functions and Hook Event support for ModPE through FFI. <br>
-      Call chain: C++ ⇆ Java → JavaScript ⇆ Java ⇆ C++ → ⋯
-      <ul>
-        <li>The first arrow comes from the callback of the BlockLauncher through the naive JNI.</li>
-        <li>The second arrow comes from the Rhino used by the BlockLauncher,
-          a JVM's JavaScript interpreter.
-        </li>
-        <li>The third arrow comes from Rhino calling the <code>java.lang.ClassLoader</code>
-          through JVM reflection. <br>
-          The reverse arrow comes from the so-called interface dynamic proxy
-          <code>Proxy.newProxyInstance</code>.
-        </li>
-        <li>The fourth arrow comes from the <code>System.load</code> of the JVM and JNI.</li>
-      </ul>
+      April 2018.
+      Provides additional Native Functions and Hook Event support for ModPE through FFI.
       <i>(MinecraftPE, BlockLauncher, C++, Java, JavaScript). </i>
+
+      <details>
+        <summary>
+          Call chain: C++ ⇆ Java → JavaScript ⇆ Java ⇆ C++ → ⋯
+        </summary>
+        <ul>
+          <li>The 1st arrow comes from the callback of the BlockLauncher through the naive JNI.</li>
+          <li>The 2nd arrow comes from the Rhino used by the BlockLauncher,
+            a JVM's JavaScript interpreter.
+          </li>
+          <li>The 3rd arrow comes from Rhino calling the <code>java.lang.ClassLoader</code>
+            through JVM reflection. <br>
+            The reverse arrow comes from the so-called interface dynamic proxy
+            <code>Proxy.newProxyInstance</code>.
+          </li>
+          <li>The 4th arrow comes from the <code>System.load</code> of the JVM and JNI.</li>
+        </ul>
+      </details>
+    </li>
+
+    <li>
+      September 01, 2017. Found a way to break the PE block id limit.
+      <i>(MinecraftPE, BlockLauncher, JavaScript). </i>
+
+      <details>
+        <summary>
+          Note: "breaking the limit" and "the way".
+        </summary>
+        <ul>
+          <li>
+            Since the maximum block ID at that time was 255,
+            and the actual number of available IDs was less than 40. <br>
+            Therefore, "breaking the limit" means providing far more IDs than 40.
+          </li>
+          <li>
+            Specifically, it fixed a problem where
+            a block would display different names for different aux values.
+          </li>
+          <li>
+            At that time, some people also discovered this method,
+            but the implementation was slightly different.
+          </li>
+        </ul>
+      </details>
     </li>
 
     <li>
@@ -209,6 +290,12 @@
       February 02, 2003. Born.
     </li>
   </ul>
+
+  <div id="last-updated"></div>
+  <script>
+    var date = new Date(document.lastModified);
+    document.getElementById("last-updated").innerHTML = `<i>Last updated: ${date.toDateString()}</i>`;
+  </script>
 
 </body>
 
