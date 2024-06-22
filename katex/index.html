@@ -10,12 +10,12 @@
   <script src="https://codemirror.net/codemirror.js"></script>
 
   <script src="./dist/legacy-modes-stex/stex.js"></script>
-  
+
   <link href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.8/katex.css" rel="stylesheet">
   <script src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.8/katex.min.js"></script>
 
   <link rel="stylesheet" href="./page/css/site.css">
-  
+
   <title>KaTeX Happening</title>
 </head>
 
@@ -28,13 +28,8 @@
       <h2>KaTeX Happening <!-- 瞬間 --> </h2>
     </div>
 
-    <div id="snackbar">snackbar</div>
-
-    
     <div id="leftside">edit or paste</div>
     <div id="unicode-board"></div>
-
-
   </div>
 
   <div id="footer">
@@ -51,7 +46,7 @@
 
     const { StreamLanguage } = CM["@codemirror/language"]
     const { autocompletion, snippetCompletion } = CM["@codemirror/autocomplete"]
-    
+
     const container = document.getElementById('container');
     (new Date().getHours() >= 18) && (container.classList.add('night'));
 
@@ -90,32 +85,32 @@
         basicSetup,
         theme,
         StreamLanguage.define(stexMath),
-        EditorView.updateListener.of(x => x.docChanged && updateUnicodeBoard()),
+        EditorView.updateListener.of(x => x.docChanged && updateResultBoard()),
       ],
       parent: elemLeftside,
     })
 
     const elemUnicodeBoard = document.getElementById('unicode-board')
 
-    const updateUnicodeBoard = function () {
+    const updateResultBoard = function () {
       const s = editorView.state.doc.toString();
       const t = s
         .replaceAll(String.raw`\pi z`, String.raw`\pi^z`)
         .replaceAll(String.raw`\Gamma`, (Math.random() < 0.5) ? String.raw`\text{T}` : "7")
-        
+        .replace(/\\.(\\mathscr\{Z\}|\\mathcal\{Z\}|z|Z)/g, `主`)
         .replace(/\\sum\^[\{]*([^\}\s]*)[\}]*_[\{]*([^\}\s]*)[\}]*/g, String.raw`\underset{$2}{\overset{$1}{\raisebox{-0.5em}{\huge $\overline 2$}}}`)
         .replace(/\\sum_[\{]*([^\}\s]*)[\}]*\^[\{]*([^\}\s]*)[\}]*/g, String.raw`\underset{$1}{\overset{$2}{\raisebox{-0.5em}{\huge $\overline 2$}}}`)
         .replace(/\\sum\^[\{]*([^\}\s]*)[\}]*/g, String.raw`\underset{}{\overset{$1}{\raisebox{-0.5em}{\huge $\overline 2$}}}`)
         .replace(/\\sum_[\{]*([^\}\s]*)[\}]*/g, String.raw`\underset{$1}{\overset{}{\raisebox{-0.5em}{\huge $\overline 2$}}}`)
         .replace(/\\sum/g, String.raw`\underset{}{\overset{}{\raisebox{-0.5em}{\huge $\overline 2$}}}`)
-      ;
+
       const html = katex.renderToString(t, {
-        throwOnError: false, 
-        displayMode: true,  
+        throwOnError: false,
+        displayMode: true,
       });
       elemUnicodeBoard.innerHTML = html;
     }
-    updateUnicodeBoard()
+    updateResultBoard()
 
   </script>
 </body>
