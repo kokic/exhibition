@@ -3,7 +3,12 @@ repository [github.com/kokic/exhibit](https://github.com/kokic/exhibit) and depl
 
 - AI4M Roadmap, [kokic.github.io/exhibit/ai4math.svg](https://kokic.github.io/exhibit/ai4math.svg). 
 
+- Math CJK - Text Formatter, [kokic.github.io/exhibit/formatter](https://kokic.github.io/exhibit/formatter/). 
+
 - [CeTZ](https://github.com/johannes-wolf/cetz) Examples for Geometry, [kokic.github.io/exhibit/geometry](https://kokic.github.io/exhibit/geometry). 
+- Math CJK - Text Formatter, [kokic.github.io/exhibit/formatter](https://kokic.github.io/exhibit/formatter/). 
+
+- [CeTZ](https://github.com/johannes-wolf/cetz) Examples for Geometry, [kokic.github.io/exhibit/geometry](https://kokic.github.io/exhibit/geometry).
 
 - The combinatorial structure of a D-Θ±ell-Hodge theater, [kokic.github.io/exhibit/étale](https://kokic.github.io/exhibit/étale). 
 
