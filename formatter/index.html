@@ -28,6 +28,26 @@
       font-weight: normal;
     }
 
+    summary {
+      text-decoration: underline;
+    }
+
+    summary::marker {
+      content: "↓ ";
+    }
+
+    details[open]>summary::marker {
+      content: "↑ ";
+    }
+
+    .compact {
+      margin: 0.5em 0;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
     .main {
       margin: 4em 0;
       display: flex;
@@ -47,21 +67,43 @@
 <body>
   <h1>Text Formatter</h1>
   <div class="main">
+    <details>
+      <summary style="font-size: 1.2em;">Advanced</summary>
+      <h3>Tools</h3>
+      <textarea id="prep" placeholder="text preprocessor" class="full-width"></textarea>
+      <div>
+        <h3 class="compact">Remarks</h3>
+        <ul>
+          <li>text preprocessor e.g., <code>s => s.replaceAll('\n', '')</code>.</li>
+          <li>builtin preprocessor:
+            <ul>
+              <li><code>compact: s => s.replaceAll('\n', '')</code></li>
+              <li><code>expand: s => s.replaceAll('\n', '\n\n')</code></li>
+            </ul>
+          </li>
+        </ul>
+    </details>
     <textarea id="source" rows="10" placeholder="paste text here"></textarea>
     <div>
       <h3>Output</h3>
       <div id="formated"></div>
     </div>
   </div>
-
 </body>
 
 <script type="module">
   import { formatter } from "./formatter.js";
   const formated = document.querySelector('#formated');
+  const prep = document.querySelector('#prep');
   const source = document.querySelector('#source');
+
+  const compact = s => s.replaceAll('\n', '');
+  const expand = s => s.replaceAll('\n', '\n\n');
+
   source.addEventListener('input', function (event) {
-    formated.innerText = formatter(source.value);
+    let value = source.value;
+    (!!prep.value) && (value = eval(prep.value)(source.value) || source.value);
+    formated.innerText = formatter(value);
   });
 </script>
 
