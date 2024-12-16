@@ -7,7 +7,7 @@
 
   content((0, 0.3), $bb(F)_ell^(times.r plus.minus) arrow.cw.half$)
   content((0, 0), $cal(D)^(⊚ plus.minus)=$) // circle.nested
-  content((0, -0.3), $cal(B)\(underline(X)_K)^0$)
+  content((0, -0.3), $cal(B)(underline(X)_K)^0$)
 
   // top
   content((-0.5, 1), $plus.minus$)
